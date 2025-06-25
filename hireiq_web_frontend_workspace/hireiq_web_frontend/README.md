@@ -8,8 +8,19 @@ This project provides a minimal React template with a clean, modern UI and minim
 - **Modern UI**: Clean, responsive design with KAVIA brand styling
 - **Fast**: Minimal dependencies for quick loading times
 - **Simple**: Easy to understand and modify
-
 ## Getting Started
+
+### Environment Variables
+
+Be sure to create a `.env` file in the project root (next to `package.json`) with the following variables for Supabase and Gemini API integration:
+
+```
+REACT_APP_SUPABASE_URL=your_supabase_project_url
+REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
+REACT_APP_GEMINI_API_KEY=your_gemini_api_key
+```
+
+These are required for the app to function correctly at runtime.
 
 In the project directory, you can run:
 

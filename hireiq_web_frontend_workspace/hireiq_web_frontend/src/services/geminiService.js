@@ -3,9 +3,20 @@ import axios from 'axios';
 const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
 
+// Runtime check for key
+if (!GEMINI_API_KEY) {
+  // eslint-disable-next-line
+  console.error(
+    '[FATAL]: Missing Gemini API key. Please set REACT_APP_GEMINI_API_KEY in your .env file.'
+  );
+}
+
 // Helper to form Gemini API request
 async function callGeminiAPI(prompt) {
   try {
+    if (!GEMINI_API_KEY) {
+      return '[Gemini API error: missing API key]';
+    }
     const res = await axios.post(
       `${GEMINI_API_URL}?key=${GEMINI_API_KEY}`,
       { contents: [{ parts: [{ text: prompt }] }] }
