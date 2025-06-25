@@ -1,0 +1,15 @@
+/* Intentionally left minimal to override Bootstrap only as needed for app. 
+   Brand style colors */
+:root {
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --accent: #28a745;
+}
+
+body {
+  background-color: #f6f7fc;
+}
+
+h1,h2,h3,h4,h5 {
+  font-weight: 600;
+}
